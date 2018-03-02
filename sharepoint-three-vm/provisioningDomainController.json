@@ -67,7 +67,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix'),'1'), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('adVMName'),'-osdisk.vhd')]"
+              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix')), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('adVMName'),'-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -75,7 +75,7 @@
           "dataDisks": [
             {
               "vhd": {
-                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix'),'1'), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('adVMName'),'-adDataDisk.vhd')]"
+                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix')), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('adVMName'),'-adDataDisk.vhd')]"
               },
               "name": "[concat(parameters('adVMName'),'-data-disk1')]",
               "caching": "None",
@@ -95,7 +95,7 @@
         "diagnosticsProfile": {
           "bootDiagnostics": {
             "enabled": "true",
-            "storageUri": "[concat('http://',parameters('storageAccountNamePrefix'),'.blob.core.usgovcloudapi.net')]"
+            "storageUri": "[concat('http://',parameters('storageAccountNamePrefix'), 'blob.core.usgovcloudapi.net')]"
           }
         }
       },

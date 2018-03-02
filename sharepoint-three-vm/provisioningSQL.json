@@ -70,7 +70,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix'),'1'), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('sqlVMName'),'-sqlOSDisk.vhd')]"
+              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix')), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('sqlVMName'),'-sqlOSDisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -78,7 +78,7 @@
           "dataDisks": [
             {
               "vhd": {
-                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix'),'1'), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('sqlVMName'),'-sqlDataDisk.vhd')]"
+                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix')), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('sqlVMName'),'-sqlDataDisk.vhd')]"
               },
               "name": "[concat(parameters('sqlVMName'),'-data-disk1')]",
               "createOption": "Empty",
@@ -88,7 +88,7 @@
             },
             {
               "vhd": {
-                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix'),'1'), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('sqlVMName'),'-sqlLogDisk.vhd')]"
+                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix')), '2015-06-15').primaryEndpoints.blob,'vhds/',parameters('sqlVMName'),'-sqlLogDisk.vhd')]"
               },
               "name": "[concat(parameters('sqlVMName'),'-log-disk1')]",
               "createOption": "Empty",
@@ -108,7 +108,7 @@
         "diagnosticsProfile": {
           "bootDiagnostics": {
             "enabled": "true",
-            "storageUri": "[concat('http://',parameters('storageAccountNamePrefix'),'.blob.core.usgovcloudapi.net')]"
+            "storageUri": "[concat('http://',parameters('storageAccountNamePrefix'), 'blob.core.usgovcloudapi.net')]"
           }
         }
       }
