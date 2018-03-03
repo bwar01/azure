@@ -67,7 +67,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix')))'.primaryEndpoints.blob),'/vhds/',parameters('spVMName'),'-osDisk.vhd')]"
+              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix')),'2015-06-15').primaryEndpoints.blob,'/vhds/',parameters('spVMName'),'-osDisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -75,7 +75,7 @@
           "dataDisks": [
             {
               "vhd": {
-                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix'))).primaryEndpoints.blob),'/vhds/',parameters('spVMName'),'-spDataDisk.vhd')]"
+                "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/',parameters('storageAccountNamePrefix')),'2015-06-15').primaryEndpoints.blob,'/vhds/',parameters('spVMName'),'-dataDisk.vhd')]"
               },
               "name": "[concat(parameters('spVMName'),'-data-disk1')]",
               "createOption": "Empty",
