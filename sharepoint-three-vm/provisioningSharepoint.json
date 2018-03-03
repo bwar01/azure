@@ -61,8 +61,8 @@
           "imageReference": {
             "publisher": "MicrosoftSharePoint",
             "offer": "MicrosoftSharePointServer",
-            "sku": "2013",
-            "version": "latest"
+            "sku": "2013"
+
           },
           "osDisk": {
             "name": "osdisk",
