@@ -95,7 +95,7 @@
         "diagnosticsProfile": {
           "bootDiagnostics": {
             "enabled": "true",
-            "storageUri": "[concat('https://',parameters('storageAccountNamePrefix'), '.blob.core.usgovcloudapi.net')]"
+            "storageUri": "[concat('https://',parameters('storageAccountNamePrefix'),'.blob.core.usgovcloudapi.net')]"
           }
         }
       },
