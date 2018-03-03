@@ -67,7 +67,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat('https://',parameters('storageAccountNamePrefix'),'.blob.core.usgovcloudapi.net/vhds/',parameters('adVMName'),'-osdisk.vhd')]"
+              "uri": "[concat('https://',parameters('storageAccountNamePrefix'),'.core.usgovcloudapi.net/vhds/',parameters('adVMName'),'-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -75,7 +75,7 @@
           "dataDisks": [
             {
               "vhd": {
-                "uri": "[concat('https://',parameters('storageAccountNamePrefix'),'.blob.core.usgovcloudapi.net/vhds/',parameters('adVMName'),'-adDatadisk.vhd')]"
+                "uri": "[concat('https://',parameters('storageAccountNamePrefix'),'.core.usgovcloudapi.net/vhds/',parameters('adVMName'),'-adDatadisk.vhd')]"
               },
               "name": "[concat(parameters('adVMName'),'-data-disk1')]",
               "caching": "None",
@@ -95,7 +95,7 @@
         "diagnosticsProfile": {
           "bootDiagnostics": {
             "enabled": "true",
-            "storageUri": "[concat('http://',parameters('storageAccountNamePrefix'), '.blob.core.usgovcloudapi.net')]"
+            "storageUri": "[concat('http://',parameters('storageAccountNamePrefix'), '.core.usgovcloudapi.net')]"
           }
         }
       },
